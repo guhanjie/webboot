@@ -36,6 +36,8 @@
 					p:cookiePath="/"
 					p:defaultLocale="zh_CN"/>
 
+	<bean id="exceptionResolver" class="com.guhanjie.exception.WebExceptionHandler" />
+	
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*/stat/**"/>
