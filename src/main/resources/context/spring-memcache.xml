@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<context:property-placeholder location="classpath:memcache.properties"
+		ignore-unresolvable="true" ignore-resource-not-found="true" />
+
+	<bean id="memcachedPool" class="com.whalin.MemCached.SockIOPool"
+		factory-method="getInstance" init-method="initialize" destroy-method="shutDown">
+		<constructor-arg>
+			<value>memCachedPool</value>
+		</constructor-arg>
+		<property name="servers">
+			<list>
+				<value>${memcache.server}</value>
+			</list>
+		</property>
+		<property name="initConn" value="${memcache.initConn}"/>
+		<property name="minConn" value="${memcache.minConn}"/>
+		<property name="maxConn" value="${memcache.maxConn}"/>
+		<property name="maintSleep" value="${memcache.maintSleep}"/>
+		<property name="nagle" value="${memcache.nagle}"/>
+		<property name="socketTO" value="${memcache.socketTO}"/>
+	</bean>
+
+	<bean id="memCachedClient" class="com.whalin.MemCached.MemCachedClient">
+		<constructor-arg>
+			<value>memCachedPool</value>
+		</constructor-arg>
+	</bean>
+
+</beans>
