@@ -70,12 +70,4 @@
         </property>
     </bean>
     
-    <bean id="pageConfig" class="org.mybatis.pagination.PaginationInterceptor">
-        <property name="properties">
-            <props>
-                <prop key="dbms">MYSQL</prop>
-                <prop key="sqlRegex">.*ByPage.*</prop>
-            </props>
-        </property>
-    </bean>
 </beans>
