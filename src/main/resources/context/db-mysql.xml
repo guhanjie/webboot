@@ -24,7 +24,7 @@
     <!-- 数据源配置 -->
     <bean id="mysqlDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 驱动名称 -->
-        <property name="driverClassName" value="${mall.mysql.driverClassName:com.mysql.jdbc.Driver}" />
+        <property name="driverClassName" value="${mysql.driverClassName:com.mysql.jdbc.Driver}" />
         <!-- JDBC连接串 -->
         <property name="url" value="${mysql.url:jdbc:mysql://127.0.0.1:3306}/${mysql.databasename}?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true" />
         <!-- 数据库用户名称 -->
