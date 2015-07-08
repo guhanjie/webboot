@@ -16,6 +16,7 @@
 	<import resource="db-mysql.xml"/>
     <import resource="db-mongo.xml"/>
     <import resource="spring-memcache.xml"/>
+	<import resource="classpath:/context/spring-redis.xml" />
     
 	<context:component-scan base-package="com.guhanjie.service" />
         
