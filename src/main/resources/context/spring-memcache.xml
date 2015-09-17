@@ -22,6 +22,7 @@
 		<property name="maxConn" value="${memcache.maxConn}"/>
 		<property name="maintSleep" value="${memcache.maintSleep}"/>
 		<property name="nagle" value="${memcache.nagle}"/>
+		<property name="hashingAlg" value="${memcached.hashingAlgorithm}"/>
 		<property name="socketTO" value="${memcache.socketTO}"/>
 	</bean>
 

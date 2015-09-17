@@ -1,4 +1,4 @@
-package com.guhanjie.memcache;
+package com.guhanjie.cache.memcache;
 
 import java.util.ArrayList;
 import java.util.List;
