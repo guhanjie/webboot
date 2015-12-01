@@ -27,4 +27,7 @@ public class WebExceptionFactory {
 		return new WebException(exceptionEnum.getCode(), exceptionEnum.getMessage(), exceptionEnum.getScreenMessage(), errorCause, cause);
     }
 
+    public static WebException exception(WebExceptionEnum exceptionEnum){
+        return exception(exceptionEnum, null, null);
+    }
 }
