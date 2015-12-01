@@ -17,7 +17,7 @@ public enum WebExceptionEnum {
         SYSTEM_NO_SUPPORT(10004, "system.not.support","系统不支持"),
         VALIDATE_ERROR(10005, "validate.error","数据校验不正确"),
         PARAMETER_ABSENT(10006, "parameter.absent","缺少必须的参数"),
-		SIGNATURE_INVALID(10007, "invalid signature", "无效的签名"),
+		SIGNATURE_INVALID(10007, "signature.invalid", "无效的签名"),
 		DATA_NOT_FOUND(10008, "data.not.found","数据不存在"),
 		DATA_HAS_EXIST(10009, "data.has.exist","数据已存在"),
 		DATA_DUPLICATION(10010, "data.duplication","数据重复"),
@@ -28,6 +28,9 @@ public enum WebExceptionEnum {
 		// 1XX 用户操作相关
 		USER_LOCKED(10100, "user.locked","用户被锁定"),
 		FRENQUENCY_TO_FAST(10101,"frequency.too.fast","操作太频繁"), 
+		USER_NAME_NOT_EXIST(10102, "user.name.not.exist", "用户名不能为空"),
+		USER_PASSWORD_NOT_EXIST(10103, "user.password.not.exist", "用户密码不能为空"),
+		USER_EMAIL_NOT_EXIST(10104, "user.email.not.exist", "用户邮箱不能为空"),
 		
 		// 2XX  商品相关
 		PRODUCT_NOT_SALE(10200, "suite.not.sale","商品不能售卖"),
