@@ -12,7 +12,7 @@ import com.guhanjie.service.UserService;
 
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class HomeController extends BaseController{
 	
 	@Autowired
 	private UserService userService;

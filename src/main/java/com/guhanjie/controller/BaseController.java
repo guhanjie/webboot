@@ -42,6 +42,30 @@ public abstract class BaseController {
 	}
 
 	/**
+     * 返回失败（不带任何结果值）
+     * @return {"success": false}
+     */
+    protected Map<String, Object> fail() {
+		Map<String, Object> rt = new HashMap<String, Object>();
+        rt.put("success", false);
+        return rt;
+    }
+
+	/**
+	 * 返回请求失败后带相关内容的Map对象
+	 * 
+	 * @param obj
+	 * @return {<br>"success": false<br>"content": obj<br>}
+	 */
+	protected Map<String, Object> fail(Object obj){
+		Map<String, Object> rt = fail();
+		if(obj != null){
+			rt.put("content", obj);
+		}
+		return rt;
+	}
+
+	/**
      * 返回失败，并带相关失败消息
 	 * @param response  用于设置status=299,不需要时可设置传null
 	 * @param code 错误编号，如：20001
@@ -84,11 +108,11 @@ public abstract class BaseController {
         	Integer code = e2.getCode();
     		String message = e2.getMessage();
     		String description = e2.getScreenMessage()==null ? e2.getMessage() : e2.getScreenMessage();
-    		String debugMessage = e2.getErrorCause();
+    		String causeMessage = e2.getCauseMessage();
     		if(response != null) {
     			response.setStatus(e2.getHttpStatus());
     		}
-    		return fail(null, code, message, description, debugMessage);
+    		return fail(null, code, message, description, causeMessage);
         } 
 		// 系统异常
         else {

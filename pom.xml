@@ -40,6 +40,16 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>3.0.3</version>
+		</dependency>
 
 		<!-- spring framework -->
 		<dependency>
@@ -85,11 +95,6 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-pagination</artifactId>
-            <version>0.0.3</version>
-        </dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
