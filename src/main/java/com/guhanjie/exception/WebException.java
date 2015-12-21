@@ -3,6 +3,8 @@ package com.guhanjie.exception;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.guhanjie.util.XssSecurityUtils;
+
 public class WebException extends RuntimeException {
     private static final long serialVersionUID = 1L;
     
@@ -30,7 +32,7 @@ public class WebException extends RuntimeException {
 		super(message, cause);
 		this.code = code;
 		this.message = message;
-		this.causeMessage = (cause==null ? null : xssClean(cause.getMessage()));
+		this.causeMessage = (cause==null ? null : XssSecurityUtils.xssClean(cause.getMessage()));
 	}
     
     protected WebException(Integer code, String message, String screenMessage, Throwable cause) {
@@ -38,7 +40,7 @@ public class WebException extends RuntimeException {
 		this.code = code;
 		this.message = message;
 		this.screenMessage = screenMessage;
-		this.causeMessage = (cause==null ? null : xssClean(cause.getMessage()));
+		this.causeMessage = (cause==null ? null : XssSecurityUtils.xssClean(cause.getMessage()));
 	}
     	
 	public int getHttpStatus() {
@@ -94,7 +96,7 @@ public class WebException extends RuntimeException {
 
 
 	public WebException setCauseMessage(String causeMessage) {
-		this.causeMessage = xssClean(causeMessage);
+		this.causeMessage = XssSecurityUtils.xssClean(causeMessage);
 		return this;
 	}
 
@@ -115,17 +117,4 @@ public class WebException extends RuntimeException {
 		this.params.add(param);
 		return this;
 	}
-
-	private static String xssClean(String str){
-		if(str == null || str.length() == 0){
-			return str;
-		}
-		str = str.replace("&", "&amp;");
-		str = str.replace("<", "&lt;");
-		str = str.replace(">", "&gt;");
-		str = str.replace("'", "&apos;");
-		str = str.replace("\"","&quot;");
-		return str;
-	}
-
 }
