@@ -3,7 +3,7 @@ package com.guhanjie.exception;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.guhanjie.util.XssSecurityUtils;
+import com.guhanjie.util.XssSecurityUtil;
 
 public class WebException extends RuntimeException {
     private static final long serialVersionUID = 1L;
@@ -32,7 +32,7 @@ public class WebException extends RuntimeException {
 		super(message, cause);
 		this.code = code;
 		this.message = message;
-		this.causeMessage = (cause==null ? null : XssSecurityUtils.xssClean(cause.getMessage()));
+		this.causeMessage = (cause==null ? null : XssSecurityUtil.xssClean(cause.getMessage()));
 	}
     
     protected WebException(Integer code, String message, String screenMessage, Throwable cause) {
@@ -40,7 +40,7 @@ public class WebException extends RuntimeException {
 		this.code = code;
 		this.message = message;
 		this.screenMessage = screenMessage;
-		this.causeMessage = (cause==null ? null : XssSecurityUtils.xssClean(cause.getMessage()));
+		this.causeMessage = (cause==null ? null : XssSecurityUtil.xssClean(cause.getMessage()));
 	}
     	
 	public int getHttpStatus() {
@@ -96,7 +96,7 @@ public class WebException extends RuntimeException {
 
 
 	public WebException setCauseMessage(String causeMessage) {
-		this.causeMessage = XssSecurityUtils.xssClean(causeMessage);
+		this.causeMessage = XssSecurityUtil.xssClean(causeMessage);
 		return this;
 	}
 

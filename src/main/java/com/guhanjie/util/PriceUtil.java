@@ -2,7 +2,7 @@ package com.guhanjie.util;
 
 import java.text.DecimalFormat;
 
-public class PriceUtils {
+public class PriceUtil {
 	/**
 	 * 价钱工具类
 	 * 

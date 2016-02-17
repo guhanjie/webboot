@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DateTimeUtils {
+public class DateTimeUtil {
 
 	private static final ThreadLocal<SimpleDateFormat> threadLocal = new ThreadLocal<SimpleDateFormat>();
 	
@@ -675,8 +675,8 @@ public class DateTimeUtils {
 	 */
 	public static int getIntervalDays(Date date, Date otherDate) {
 		int num = -1;
-		Date dateTmp = DateTimeUtils.StringToDate(DateTimeUtils.getDate(date), DateStyle.YYYY_MM_DD);
-		Date otherDateTmp = DateTimeUtils.StringToDate(DateTimeUtils.getDate(otherDate), DateStyle.YYYY_MM_DD);
+		Date dateTmp = DateTimeUtil.StringToDate(DateTimeUtil.getDate(date), DateStyle.YYYY_MM_DD);
+		Date otherDateTmp = DateTimeUtil.StringToDate(DateTimeUtil.getDate(otherDate), DateStyle.YYYY_MM_DD);
 		if (dateTmp != null && otherDateTmp != null) {
 			long time = Math.abs(dateTmp.getTime() - otherDateTmp.getTime());
 			num = (int) (time / (24 * 60 * 60 * 1000));

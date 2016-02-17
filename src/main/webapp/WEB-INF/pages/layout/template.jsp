@@ -20,10 +20,12 @@
     	<meta name="description" content="${meta.description}"/>
     	<link rel="shortcut icon" type="image/x-icon" href="${rootPath}/img/favicon.ico">
     	<t:importAttribute name="cssPath" />
-        <link rel="stylesheet" href="${rootPath}/${cssPath}/common/bootstrap.css">                
+        <link rel="stylesheet" href="${rootPath}/${cssPath}/common/bootstrap.css">
+        <link rel="stylesheet" href="${rootPath}/${cssPath}/common/header.css">
+        <link rel="stylesheet" href="${rootPath}/${cssPath}/common/footer.css">
     	<t:importAttribute name="css" />
         <c:if test='${not empty css}'>
-            <script src="${rootPath}/${cssPath}/${css}.css"></script>
+            <link rel="stylesheet" href="${rootPath}/${cssPath}/${css}.css">
         </c:if>
     	<title><t:getAsString name="title"/>-${rootPath}</title>
     </head>

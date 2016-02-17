@@ -3,7 +3,7 @@ package com.guhanjie.util;
 import java.security.MessageDigest;
 
 
-public class MD5Utils {	 
+public class MD5Util {	 
 	public static String md5(String str) {
 		byte[] byteArray = null;
 		try {

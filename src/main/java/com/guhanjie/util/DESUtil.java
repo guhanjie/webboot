@@ -7,7 +7,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * 3DES加密工具类
  */
-public class DESUtils {
+public class DESUtil {
 	
 	/**
 	 * 加密

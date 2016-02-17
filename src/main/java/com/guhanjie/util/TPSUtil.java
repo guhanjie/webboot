@@ -19,9 +19,9 @@ import org.slf4j.LoggerFactory;
  * 用法参见main函数<br> 
  * @author a
  */
-public class TPSUtils {
+public class TPSUtil {
 	private static Logger logger = LoggerFactory.getLogger("system.tps");
-	private static TPSUtils instance = null;
+	private static TPSUtil instance = null;
 	
 	private String name = "default";
 	private AtomicLong requestCount = new AtomicLong(0);
@@ -47,7 +47,7 @@ public class TPSUtils {
 	}
 
 	//可以创建新的TPS
-	public  TPSUtils(String name, int printIntervalSecond){
+	public  TPSUtil(String name, int printIntervalSecond){
 		//最多每10分钟输出一次log，printIntervalSecond<0,不启动
 		if(printIntervalSecond > 600){
 			this.printIntervalSecond = 600;
@@ -71,9 +71,9 @@ public class TPSUtils {
 	 * @param printIntervalSecond
 	 * @return
 	 */
-	public static synchronized TPSUtils getInstance(int printIntervalSecond){
+	public static synchronized TPSUtil getInstance(int printIntervalSecond){
 		if(instance == null){		
-				instance = new TPSUtils("default",printIntervalSecond);
+				instance = new TPSUtil("default",printIntervalSecond);
 		}
 		return instance;
 	}
@@ -165,7 +165,7 @@ public class TPSUtils {
 	
 	public static void main(String[] args ){
 		//TPS tps = TPS.getInstance(1);		// 获取全局默认tps，多线程可以共用
-		TPSUtils tps = new TPSUtils("main",2);		// 或者创建一个独用tps
+		TPSUtil tps = new TPSUtil("main",2);		// 或者创建一个独用tps
 		tps.setIgnoreTPS0(true);			// 设置tps=0时不要打印日志
 		tps.useStdout(true);				// 设置使用system.out.println()输出,否则使用log4j
 		tps.start();						// 开始计数

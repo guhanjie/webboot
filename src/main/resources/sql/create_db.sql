@@ -29,8 +29,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'guhanjie', 'm');
-INSERT INTO `user` VALUES ('2', 'yinxia', 'f');
-INSERT INTO `user` VALUES ('3', 'wuyue', 'm');
-INSERT INTO `user` VALUES ('4', 'jiangxiaoli', 'm');
-INSERT INTO `user` VALUES ('5', 'Ðþ½£', 'm');
+INSERT INTO `user` VALUES ('1', 'webboot', 'm');
+INSERT INTO `user` VALUES ('2', 'guhanjie', 'm');
+INSERT INTO `user` VALUES ('3', 'girl', 'f');
+INSERT INTO `user` VALUES ('4', 'å¸…å“¥', 'm');
+INSERT INTO `user` VALUES ('5', 'ç¾Žå¥³', 'f');

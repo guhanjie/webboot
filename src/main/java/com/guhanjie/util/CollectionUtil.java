@@ -2,7 +2,7 @@ package com.guhanjie.util;
 
 import java.util.Collection;
 
-public class CollectionUtils {
+public class CollectionUtil {
 	
 	public boolean isNotEmpty(Collection<Object> collection){
 		if(collection != null && collection.size() > 0){

@@ -16,7 +16,7 @@ public class UserService {
 	@Autowired
 	private UserMapper userMapper;
 	
-	public User getUser(Integer id) {
+	public User getUser(Long id) {
 		LOGGER.info("Get user[{}]...", id);
 		return userMapper.selectByPrimaryKey(id);
 	}

@@ -23,9 +23,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Base64Utils;
 
-public final class HttpUtils {
+public final class HttpUtil {
     
-    private static final Logger LOGGER = LoggerFactory.getLogger(HttpUtils.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(HttpUtil.class);
 
 	private static String SCHEMA_HTTPS = "https";
 	private static String SCHEMA_HTTP = "http";

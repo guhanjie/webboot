@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  * @version			1.0.0 
  * @since 			JDK 1.6 
  */
-public class XssSecurityUtils {
+public class XssSecurityUtil {
 
     private static Pattern[] patterns = new Pattern[]{
             // 删除script标签

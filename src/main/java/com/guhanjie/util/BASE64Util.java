@@ -2,7 +2,7 @@ package com.guhanjie.util;
 
 import org.apache.commons.codec.binary.Base64;
 
-public class BASE64Utils {
+public class BASE64Util {
 
 	/**
      * 解密

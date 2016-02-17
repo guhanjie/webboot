@@ -34,12 +34,12 @@ public class UserMapperTest {
 		//Create
 		logger.debug("Create one record to table[{}]...\n", tableName);
 		User model = new User();
-		model.setId((int)id);
+		model.setId(id);
 		model.setName("guhanjie");
 		model.setSex("m");
 		long insertCount = userMapper.insertSelective(model);
 		assertEquals(insertCount, 1L);
-		//Select
+		//Retrieve
 		logger.debug("Select one record from table[{}]...\n", tableName);
 		model = userMapper.selectByPrimaryKey(model.getId());
 		logger.debug(JSON.toJSONString(model, true));

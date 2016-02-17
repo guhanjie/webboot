@@ -12,15 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.guhanjie.util.HttpUtils;
+import com.guhanjie.util.HttpUtil;
 
 public class WebExceptionHandler implements HandlerExceptionResolver {
 	
 	public static final Logger LOGGER = LoggerFactory.getLogger(WebExceptionHandler.class);
 
 	@Override
-	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
-			Exception exception) {		
+	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception exception) {		
 		LOGGER.error(exception.getMessage(), exception);
 		
 		if (!(exception instanceof WebException)) {
@@ -40,7 +39,7 @@ public class WebExceptionHandler implements HandlerExceptionResolver {
 		//status
 		response.setStatus(ee.getHttpStatus());
 		//ajax
-		if(HttpUtils.isAjaxRequest(request) || HttpUtils.isMultiPartRequest(request)){
+		if(HttpUtil.isAjaxRequest(request) || HttpUtil.isMultiPartRequest(request)){
 			PrintWriter os = null;
 			try {
 				response.setStatus(ee.getHttpStatus());
